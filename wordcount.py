@@ -2,7 +2,7 @@ import sys
 
 from pyspark.sql import SparkSession
 
-from spk_sample.func import get_counts
+from spk_sample.func import run_job
 
 
 if __name__ == "__main__":
@@ -12,9 +12,8 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder.appName("WordCount").getOrCreate()
 
-    lines = spark.read.text(sys.argv[1]).rdd.map(lambda r: r[0])
-    output = get_counts(lines)
-    for (word, count) in output:
-        print("%s: %i" % (word, count))
+    input_file = sys.argv[1]
+
+    run_job(spark, input_file)
 
     spark.stop()
