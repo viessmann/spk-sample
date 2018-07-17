@@ -3,7 +3,7 @@ Sample Spark app to to demonstrate Python packaging and deployment in Spark clus
 
 # Run on local
 
-`spark-submit wordcount.py sample.txt`
+`./scripts/run_local.sh`
 
 # Build
 

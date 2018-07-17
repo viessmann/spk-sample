@@ -1,5 +1,6 @@
 from operator import add
 
+from pyspark.sql.functions import udf
 from pyspark.accumulators import Accumulator, AddingAccumulatorParam
 
 unique_count = Accumulator('unique', 0, AddingAccumulatorParam(0))
@@ -21,3 +22,14 @@ def run_job(spark, input_file):
 
     for (word, count) in output:
         print("%s: %i" % (word, count))
+    return output
+
+
+def check_upper(x):
+    """
+    Check if word is upper case
+    """
+    return x.isupper()
+
+
+check_upper_udf = udf(check_upper)
