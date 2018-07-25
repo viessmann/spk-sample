@@ -17,9 +17,9 @@ First setup [Databricks CLI](https://docs.azuredatabricks.net/user-guide/dev-too
 
 `dbfs cp dist/spk_sample-1.0.0-py3.6.egg dbfs:/spk_sample/dist/spk_sample-1.0.0-py3.6.egg`
 
-`dbfs cp wordcount.py dbfs:/spk_sample/wordcount.py`
+`dbfs cp spk_sample/wordcount.py dbfs:/spk_sample/wordcount.py`
 
-`dbfs cp wordcount.py dbfs:/spk_sample/sample.txt`
+`dbfs cp sample.txt dbfs:/spk_sample/sample.txt`
 
 * Run Spark submit from Jobs UI with following parameters:
 
